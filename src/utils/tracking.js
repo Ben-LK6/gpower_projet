@@ -34,7 +34,7 @@ export const trackProductView = (productId, productName) => {
 const sendToBackend = async (data) => {
   try {
     // Tu peux créer une API pour sauvegarder en base
-    // const response = await fetch('http://gpower.ct.ws/api/tracking.php', {
+    // const response = await fetch('https://gpower.ct.ws/api/tracking.php', {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
     //   body: JSON.stringify(data)
