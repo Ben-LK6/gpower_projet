@@ -27,7 +27,7 @@ const SearchBar = ({ onSearch, onCategoryFilter, categories }) => {
 
   const getSelectedCategoryName = () => {
     if (!selectedCategory) return '';
-    return categories.find(c => c.id === parseInt(selectedCategory))?.nom;
+    return categories.find(c => c.id == parseInt(selectedCategory))?.nom;
   };
 
   return (
