@@ -1,0 +1,84 @@
+/* WhatsAppFloat.css - Mobile First */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  background: #128C7E;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-icon {
+  font-size: 1.5rem;
+}
+
+.whatsapp-text {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Cache le texte sur mobile très petit */
+@media (max-width: 360px) {
+  .whatsapp-text {
+    display: none;
+  }
+  
+  .whatsapp-float {
+    padding: 15px;
+    border-radius: 50%;
+  }
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .whatsapp-float {
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+  }
+  
+  .whatsapp-text {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .whatsapp-float {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+
+/* Cacher le bouton sur la page admin */
+body.admin-page .whatsapp-float {
+  display: none;
+}
