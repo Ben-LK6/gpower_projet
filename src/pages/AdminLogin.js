@@ -13,7 +13,7 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      const response = await fetch('https://gpower.ct.ws/api/auth.php', {
+      const response = await fetch('http://gpower.ct.ws/api/auth.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
