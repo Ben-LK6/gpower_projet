@@ -51,7 +51,7 @@ const ProductList = () => {
 
     if (selectedCategory) {
       filtered = filtered.filter(product =>
-        product.category_id == parseInt(selectedCategory)
+        product.category_id === parseInt(selectedCategory)
       );
     }
 
