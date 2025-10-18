@@ -1,5 +1,5 @@
 // Service pour communiquer avec l'API PHP
-const API_URL = 'https://gpower-backend.onrender.com/api';
+const API_URL = 'http://localhost:8000/api';
 
 export const productService = {
   // Récupérer tous les produits
