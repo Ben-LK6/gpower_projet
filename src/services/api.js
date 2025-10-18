@@ -1,5 +1,5 @@
 // Service pour communiquer avec l'API PHP
-const API_URL = 'https://gpower.ct.ws'; // Remplacez par votre domaine InfinityFree
+const API_URL = 'https://gpower-backend.onrender.com/api';
 
 export const productService = {
   // Récupérer tous les produits
