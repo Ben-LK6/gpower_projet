@@ -1,5 +1,6 @@
 // Service pour communiquer avec l'API PHP
-const API_URL = 'https://gpower.ct.ws/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+
 
 export const productService = {
   // Récupérer tous les produits
