@@ -1,17 +1,51 @@
 // Service pour communiquer avec l'API PHP
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
+// Données mock pour la production
+const MOCK_PRODUCTS = [
+  {
+    id: 1,
+    nom: "Smartphone Galaxy",
+    description: "Téléphone intelligent dernière génération",
+    prix: "599.99",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300",
+    category_id: 1,
+    categorie_nom: "Électronique",
+    categorie_couleur: "#FF6B6B"
+  },
+  {
+    id: 2,
+    nom: "T-shirt Premium",
+    description: "T-shirt en coton bio de qualité",
+    prix: "29.99",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300",
+    category_id: 2,
+    categorie_nom: "Vêtements",
+    categorie_couleur: "#4ECDC4"
+  }
+];
+
+const MOCK_CATEGORIES = [
+  { id: 1, nom: "Électronique", description: "Appareils électroniques", couleur: "#FF6B6B" },
+  { id: 2, nom: "Vêtements", description: "Mode et accessoires", couleur: "#4ECDC4" }
+];
+
+const isProduction = process.env.REACT_APP_ENV === 'production';
+
 
 export const productService = {
   // Récupérer tous les produits
   getProducts: async () => {
+    if (isProduction) {
+      return MOCK_PRODUCTS;
+    }
     try {
       const response = await fetch(`${API_URL}/produits.php`);
       if (!response.ok) throw new Error('Erreur API');
       return await response.json();
     } catch (error) {
       console.error('Erreur:', error);
-      return [];
+      return MOCK_PRODUCTS;
     }
   },
 
@@ -29,13 +63,16 @@ export const productService = {
 
   // Récupérer toutes les catégories
   getCategories: async () => {
+    if (isProduction) {
+      return MOCK_CATEGORIES;
+    }
     try {
       const response = await fetch(`${API_URL}/categories.php`);
       if (!response.ok) throw new Error('Erreur API');
       return await response.json();
     } catch (error) {
       console.error('Erreur:', error);
-      return [];
+      return MOCK_CATEGORIES;
     }
   },
 
