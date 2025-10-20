@@ -2,8 +2,8 @@ import React from 'react';
 
 
 const Contact = () => {
-  const phoneNumber = '0162976248'; // Remplacez par votre vrai numéro
-  const email = 'cbloko3565@gmail.com'; // Remplacez par votre email
+  const phoneNumber = '+22940870199 '; // 
+  const email = 'cbloko3565@gmail.com';
 
   const whatsappMessage = `Bonjour ! Je vous contacte depuis votre site Vos Achats.`;
   
